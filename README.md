@@ -113,6 +113,11 @@ to temporarily turn off the protection. In gdb the command is:
 
 ## Build
 
+### With docker
+
+
+`docker build -t uf2build . && docker run --rm -it --mount type=bind,source="$PWD",target=/uf2 uf2build`
+
 ### Requirements
 
 * `make` and an Unix environment
