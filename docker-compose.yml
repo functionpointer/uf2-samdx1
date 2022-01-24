@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  uf2-build:
+    build: .
+    volumes:
+      - .:/uf2
+    stdin_open: true
+    tty: true

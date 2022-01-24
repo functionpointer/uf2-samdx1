@@ -5,7 +5,7 @@ ADD https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-ar
 RUN tar xjf gcc-arm-none-eabi.tar.bz2
 ENV PATH="/arm-none-eabi/gcc-arm-none-eabi-10.3-2021.10/bin:${PATH}"
 
-RUN apt-get update && apt-get install -y build-essential git python2
+RUN apt-get update && apt-get install -y build-essential git python2 openocd nodejs
 
 WORKDIR /uf2
 
