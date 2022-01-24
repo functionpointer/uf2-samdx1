@@ -57,7 +57,7 @@ function main() {
 
     let args = ["-d2",
         "-s", "/usr/share/openocd/scripts/",
-        "-f", "interface/cmsis-dap.cfg",
+        "-f", "interface/jlink.cfg",
         "-f", "target/at91samdXX.cfg",
         "-c", cmd]
 
