@@ -47,29 +47,7 @@ function main() {
         if (!addr) fatal(`Cannot find ${logSym} symbol in map file`)
     }
 
-    let dirs = [
-        process.env["HOME"] + "/Library/Arduino15",
-        process.env["USERPROFILE"] + "/AppData/Local/Arduino15",
-        process.env["HOME"] + "/.arduino15",
-    ]
-
-    let pkgDir = ""
-
-    for (let d of dirs) {
-        pkgDir = d + "/packages/arduino/"
-        if (fs.existsSync(pkgDir)) break
-        pkgDir = ""
-    }
-
-    if (!pkgDir) fatal("cannot find Arduino packages directory")
-
-    let openocdPath = pkgDir + "tools/openocd/0.10.0-arduino1-static/"
-    if (!fs.existsSync(openocdPath)) fatal("openocd not installed in Arduino")
-
-    let openocdBin = openocdPath + "bin/openocd"
-
-    if (process.platform == "win32")
-        openocdBin += ".exe"
+    let openocdBin = "/usr/bin/openocd"
 
     let cmd = `telnet_port disabled; init; halt; `
     if (mode == "map")
@@ -78,7 +56,7 @@ function main() {
         cmd += `program ${fileName} verify reset; shutdown`
 
     let args = ["-d2",
-        "-s", openocdPath + "/share/openocd/scripts/",
+        "-s", "/usr/share/openocd/scripts/",
         "-f", "interface/cmsis-dap.cfg",
         "-f", "target/at91samdXX.cfg",
         "-c", cmd]
