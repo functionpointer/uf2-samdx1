@@ -118,6 +118,10 @@ to temporarily turn off the protection. In gdb the command is:
 
 `docker build -t uf2build . && docker run --rm -it --mount type=bind,source="$PWD",target=/uf2 uf2build`
 
+Then run `make BOARD=2s_charger`.
+
+Then, on the windows machine, run `cd scripts && python flash_via_jlink.py 2s_charger`
+
 ### Requirements
 
 * `make` and an Unix environment
