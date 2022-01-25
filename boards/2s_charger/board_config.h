@@ -5,8 +5,8 @@
 
 #define VENDOR_NAME "functionpointer"
 #define PRODUCT_NAME "2s charger"
-#define VOLUME_LABEL "2s_charger"
-#define INDEX_URL "http://githhub.com/functionpointer"
+#define VOLUME_LABEL "2s_bootload"
+#define INDEX_URL "http://github.com/functionpointer"
 #define BOARD_ID "SAMD21E18A-2s-charger"
 
 #define USB_VID 0x239A
