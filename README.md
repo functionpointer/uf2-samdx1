@@ -116,7 +116,7 @@ to temporarily turn off the protection. In gdb the command is:
 ### With docker
 
 
-`docker build -t uf2build . && docker run --rm -it --mount type=bind,source="$PWD",target=/uf2 uf2build`
+`docker build -t uf2build . && docker run --rm -it -v ${PWD}:/uf2 uf2build`
 
 Then run `make BOARD=2s_charger`.
 
